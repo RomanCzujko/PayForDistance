@@ -34,7 +34,7 @@ $(function() {
             }, callback);
     }
     // get distance results
-    function callback(response, status) {
+    function callback(response, status, car) {
         if (status != google.maps.DistanceMatrixStatus.OK) {
             $('#result').html(err);
         } else {
@@ -43,6 +43,7 @@ $(function() {
             if (response.rows[0].elements[0].status === "ZERO_RESULTS") {
                 $('#result').html("Better get on a plane. There are no roads between "  + origin + " and " + destination);
             } else {
+                var car = document.querySelector('#exampleFormControlSelect4').value;
                 var distance = response.rows[0].elements[0].distance;
                 var duration = response.rows[0].elements[0].duration;
                 console.log(response.rows[0].elements[0].distance);
@@ -58,6 +59,7 @@ $(function() {
                 $('#from').text(origin);
                 $('#to').text(destination);
                 $('#price_EUR').text(`${price_EUR.toFixed(1)} EUR`);
+                $('#car').text(car);
             }
         }
     }
