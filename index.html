@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PayDistance</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <script  defer src="https://maps.googleapis.com/maps/api/js?libraries=places&language=en&key=AIzaSyDbWXCKja1i6JaV-CaDnQqSgM0oaki7UIY"  type="text/javascript">
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css"
+</head>
+<body>
+    <header>
+        <h1 class="title">Booking plugin for TAXI service</h1>
+        <h4 class="post-title">with DISTANCE and PRICE calculating functions</h4>
+    </header>
+    <section class="main-section">
+        <form class="main-form" id="distance_form">
+        <div class="form-group"><label>From:</label> 
+            <input class="form-control" id="from_places" placeholder="Enter a location" /> 
+            <input id="origin" name="origin" required="" type="hidden" />
+        </div>
+        
+        <div class="form-group"><label>To:</label> 
+            <input class="form-control" id="to_places" placeholder="Enter a location" /> 
+            <input id="destination" name="destination" required="" type="hidden" />
+        </div>     
+        <div class="form-group">
+            <label for="exampleFormControlInput1">Email address</label>
+            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+        </div>
+        <div class="form-group">
+            <label for="exampleFormControlInput3">Date</label>
+            <input type="datetime-local" class="form-control" id="exampleFormControlInput3" placeholder="Date">
+        </div>   
+        <div class="form-group">
+            <label for="exampleFormControlSelect1">Example select</label>
+            <select class="form-control" id="exampleFormControlSelect1">
+            <option>Mersedes-Benz</option>
+            <option>Opel</option>
+            <option>Audi</option>
+            <option>VolksWagen</option>
+            <option>Porsche</option>
+            </select>
+        </div>
+        <input type="submit" class="btn btn-primary" value="Order Car"></input>
+        </form>
+        <div id="result" class="result-list">
+            <ul class="list-group">
+                <li class="list-group-item d-flex justify-content-between align-items-center">FROM:
+                    <span id="from" class="badge badge-primary badge-pill"></span>
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-center">TO:
+                    <span id="to" class="badge badge-primary badge-pill"></span>
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-center">Distance:
+                    <span id="in_kilo" class="badge badge-primary badge-pill"></span>
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-center">IN TEXT:
+                    <span id="duration_text" class="badge badge-primary badge-pill"></span>
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-center">PRICE:
+                    <span id="price_EUR" class="badge badge-primary badge-pill"></span>
+                </li>
+
+            </ul>
+        </div>
+    </section>
+    <script src="main.js"></script>
+    
+</body>
+</html>

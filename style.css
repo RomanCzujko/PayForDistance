@@ -1,0 +1,32 @@
+body {
+    box-sizing: border-box;
+    background: rgb(33,36,0);
+background: linear-gradient(90deg, rgba(33,36,0,1) 0%, rgba(225,226,40,1) 35%, rgba(230,205,34,1) 45%, rgba(249,255,0,1) 100%);
+}
+.title, .post-title {
+    display: block;
+    width: 100%;
+    text-align: center;
+}
+.main-section {
+    display: flex;
+    justify-content: space-around;
+    width: 80%;
+    margin: 0 auto;
+}
+.main-form {
+    margin: 0 auto;
+    width: 30%;
+    margin-top: 30px;
+}
+.btn-primary {
+    width: 100%;
+}
+.result-list {
+width: 40%;
+margin: 0 auto;
+margin-top: 55px;
+}
+i {
+    margin: 0 10px 0 10px;
+}
