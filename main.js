@@ -1,6 +1,6 @@
 $(function() {
     // add input listeners
-    google.maps.event.addDomListener(window, 'load', function () {
+    google.maps.event.addDomListener(window, 'touchend', function () {
         var from_places = new google.maps.places.Autocomplete(document.getElementById('from_places'));
         var to_places = new google.maps.places.Autocomplete(document.getElementById('to_places'));
 
@@ -17,7 +17,7 @@ $(function() {
                 var $container = $('body > .pac-container');
                 if ($container.length == 0) return;
                 // Move the autocomplete element just below the input.
-                $container.appendTo($('#destination').parent());
+                $container.appendTo($('#address').parent());
                 // The fix is finished, stop working.
                 window.clearInterval(fixEutocompleteInterval);
             }, 500);
