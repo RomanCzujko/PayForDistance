@@ -61,7 +61,10 @@ $(desktop = function() {
             if (response.rows[0].elements[0].status === "ZERO_RESULTS") {
                 $('#result').html("Better get on a plane. There are no roads between "  + origin + " and " + destination);
             } else {
-                var car = document.querySelector('#exampleFormControlSelect4').value;
+                var car = document.getElementById('exampleFormControlSelect4');
+                var carPrices = [1.6, 2.6, 3.6, 3.9, 6];
+                var carIndex = car.selectedIndex;
+                var carSelectedPrice = carPrices[carIndex];
                 var distance = response.rows[0].elements[0].distance;
                 var duration = response.rows[0].elements[0].duration;
                 console.log(response.rows[0].elements[0].distance);
@@ -69,7 +72,7 @@ $(desktop = function() {
                 // var distance_in_mile = distance.value / 1609.34; // the mile
                 var duration_text = duration.text;
                 var duration_value = duration.value;
-                var price_EUR = distance_in_kilo * 1.2;
+                var price_EUR = distance_in_kilo * carSelectedPrice;
                 // $('#in_mile').text(distance_in_mile.toFixed(1));
                 $('#in_kilo').text(`${distance_in_kilo.toFixed(1)} km`);
                 $('#duration_text').text(duration_text);
@@ -122,11 +125,6 @@ $(mobile = function() {
                 avoidTolls: false
             }, callback);
     }
-    // get distance results
-    // const cars = {
-    //     name: [ 'car1', 'car2', 'car3'],
-    //     price: [1, 2, 3 ]
-    // },
     function callback(response, status, car) {
         if (status != google.maps.DistanceMatrixStatus.OK) {
             $('#result').html(err);
@@ -136,11 +134,12 @@ $(mobile = function() {
             if (response.rows[0].elements[0].status === "ZERO_RESULTS") {
                 $('#result').html("Better get on a plane. There are no roads between "  + origin + " and " + destination);
             } else {
-                var car = document.getElementById('#exampleFormControlSelect4');
+                var car = document.getElementById('exampleFormControlSelect4');
                 var carPrices = [1.6, 2.6, 3.6, 3.9, 6];
                 var carIndex = car.selectedIndex;
+                console.log(carIndex);
                 var carSelectedPrice = carPrices[carIndex];
-                console.log(carSelectedPrice)
+                console.log(carSelectedPrice);
                 var distance = response.rows[0].elements[0].distance;
                 var duration = response.rows[0].elements[0].duration;
                 console.log(response.rows[0].elements[0].distance);
