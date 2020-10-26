@@ -43,7 +43,7 @@ $(desktop = function() {
             if (response.rows[0].elements[0].status === "ZERO_RESULTS") {
                 $('#result').html("Better get on a plane. There are no roads between "  + origin + " and " + destination);
             } else {
-                var car = document.getElementById('#exampleFormControlSelect4');
+                var car = document.getElementById('#exampleFormControlSelect4').value;
                 var carPrices = [1.6, 2.6, 3.6, 3.9, 6];
                 var carIndex = car.selectedIndex;
                 var carSelectedPrice = carPrices[carIndex];
@@ -116,7 +116,7 @@ $(mobile = function() {
             if (response.rows[0].elements[0].status === "ZERO_RESULTS") {
                 $('#result').html("Better get on a plane. There are no roads between "  + origin + " and " + destination);
             } else {
-                var car = document.getElementById('#exampleFormControlSelect4');
+                var car = document.getElementById('#exampleFormControlSelect4').value;
                 var carPrices = [1.6, 2.6, 3.6, 3.9, 6];
                 var carIndex = car.selectedIndex;
                 var carSelectedPrice = carPrices[carIndex];
