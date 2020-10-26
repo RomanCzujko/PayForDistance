@@ -43,9 +43,11 @@ $(desktop = function() {
             if (response.rows[0].elements[0].status === "ZERO_RESULTS") {
                 $('#result').html("Better get on a plane. There are no roads between "  + origin + " and " + destination);
             } else {
-                var car = document.getElementById('#exampleFormControlSelect4').value;
+                var carName = document.getElementById('exampleFormControlSelect4').value;
+                var car = document.getElementById('exampleFormControlSelect4');
                 var carPrices = [1.6, 2.6, 3.6, 3.9, 6];
                 var carIndex = car.selectedIndex;
+                console.log(carIndex);
                 var carSelectedPrice = carPrices[carIndex];
                 var distance = response.rows[0].elements[0].distance;
                 var duration = response.rows[0].elements[0].duration;
@@ -62,7 +64,7 @@ $(desktop = function() {
                 $('#from').text(origin);
                 $('#to').text(destination);
                 $('#price_EUR').text(`${price_EUR.toFixed(1)} EUR`);
-                $('#car').text(car);
+                $('#car').text(carName);
             }
         }
     }
@@ -116,7 +118,8 @@ $(mobile = function() {
             if (response.rows[0].elements[0].status === "ZERO_RESULTS") {
                 $('#result').html("Better get on a plane. There are no roads between "  + origin + " and " + destination);
             } else {
-                var car = document.getElementById('#exampleFormControlSelect4').value;
+                var carName = document.getElementById('exampleFormControlSelect4').value;
+                var car = document.getElementById('exampleFormControlSelect4');
                 var carPrices = [1.6, 2.6, 3.6, 3.9, 6];
                 var carIndex = car.selectedIndex;
                 var carSelectedPrice = carPrices[carIndex];
@@ -135,7 +138,7 @@ $(mobile = function() {
                 $('#from').text(origin);
                 $('#to').text(destination);
                 $('#price_EUR').text(`${price_EUR.toFixed(1)} EUR`);
-                $('#car').text(car);
+                $('#car').text(carName);
             }
         }
     }
