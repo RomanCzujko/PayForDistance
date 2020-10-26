@@ -4,24 +4,6 @@ $(desktop = function() {
         var from_places = new google.maps.places.Autocomplete(document.getElementById('from_places'));
         var to_places = new google.maps.places.Autocomplete(document.getElementById('to_places'));
 
-            //     var fixEutocompleteInterval = window.setInterval(function(){
-            //     var $container = $('body > .pac-container');
-            //     if ($container.length == 0) return;
-            //     // Move the autocomplete element just below the input.
-            //     $container.appendTo($('#origin').parent());
-            //     // The fix is finished, stop working.
-            //     window.clearInterval(fixEutocompleteInterval);
-            // }, 500);
-
-            // var fixEutocompleteInterval = window.setInterval(function(){
-            //     var $container = $('body > .pac-container');
-            //     if ($container.length == 0) return;
-            //     // Move the autocomplete element just below the input.
-            //     $container.appendTo($('#address').parent());
-            //     // The fix is finished, stop working.
-            //     window.clearInterval(fixEutocompleteInterval);
-            // }, 500);
-
         google.maps.event.addListener(from_places, 'place_changed', function () {
             var from_place = from_places.getPlace();
             var from_address = from_place.formatted_address;
@@ -61,7 +43,7 @@ $(desktop = function() {
             if (response.rows[0].elements[0].status === "ZERO_RESULTS") {
                 $('#result').html("Better get on a plane. There are no roads between "  + origin + " and " + destination);
             } else {
-                var car = document.getElementById('exampleFormControlSelect4');
+                var car = document.getElementById('#exampleFormControlSelect4');
                 var carPrices = [1.6, 2.6, 3.6, 3.9, 6];
                 var carIndex = car.selectedIndex;
                 var carSelectedPrice = carPrices[carIndex];
@@ -134,12 +116,10 @@ $(mobile = function() {
             if (response.rows[0].elements[0].status === "ZERO_RESULTS") {
                 $('#result').html("Better get on a plane. There are no roads between "  + origin + " and " + destination);
             } else {
-                var car = document.getElementById('exampleFormControlSelect4');
+                var car = document.getElementById('#exampleFormControlSelect4');
                 var carPrices = [1.6, 2.6, 3.6, 3.9, 6];
                 var carIndex = car.selectedIndex;
-                console.log(carIndex);
                 var carSelectedPrice = carPrices[carIndex];
-                console.log(carSelectedPrice);
                 var distance = response.rows[0].elements[0].distance;
                 var duration = response.rows[0].elements[0].duration;
                 console.log(response.rows[0].elements[0].distance);
