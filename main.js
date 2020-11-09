@@ -91,7 +91,7 @@ document.addEventListener('DOMContentLoaded', function () {
                   )
                   document.body.appendChild(modal)
                   return modal;
-                }, 2000);
+                }, 1000);
            
                    
     
@@ -110,7 +110,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         avoidHighways: false,
                         avoidTolls: false
                     }, callback);
-            }, 2000); 
+            }, 1000); 
             // get distance results
             function callback(response, status, car) {
                 if (status != google.maps.DistanceMatrixStatus.OK) {
