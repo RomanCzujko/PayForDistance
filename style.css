@@ -1,7 +1,7 @@
 body {
     box-sizing: border-box;
-    background: rgb(33,36,0);
-background: linear-gradient(90deg, rgba(33,36,0,1) 0%, rgba(225,226,40,1) 35%, rgba(230,205,34,1) 45%, rgba(249,255,0,1) 100%);
+    /* background: rgb(33,36,0);
+background: linear-gradient(90deg, rgba(33,36,0,1) 0%, rgba(225,226,40,1) 35%, rgba(230,205,34,1) 45%, rgba(249,255,0,1) 100%); */
 }
 .title, .post-title {
     display: block;
@@ -21,6 +21,7 @@ background: linear-gradient(90deg, rgba(33,36,0,1) 0%, rgba(225,226,40,1) 35%, r
 }
 .btn-primary {
     width: 100%;
+    height: 50px;
 }
 .result-list {
 width: 50%;
@@ -29,4 +30,154 @@ margin-top: 55px;
 }
 i {
     margin: 0 10px 0 10px;
+}
+.form-control._error {
+    box-shadow: 0 0 10px red;
+}
+.modal-overlay {
+    position: relative;
+    z-index: 5;
+    
+}
+.modal-overlay::after{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 25%;
+    width: 50%;
+    height: 100%;
+    margin: 0 auto;
+    background: rgba(255,255,255,0.7) url('https://blackbird-chauffeurservice.de/wp-content/uploads/2019/11/Logo.png') center / 300px no-repeat;
+    opacity: 0;
+    border-radius: 30%;
+    visibility: hidden;
+    transition: all 0.5s ease 0s;
+    z-index: 5;
+    
+}
+.modal-overlay._sending::after{
+    opacity: 1;
+    visibility: visible;
+    z-index: 5;
+}
+.input-container {
+display: flex;
+width: 100%;
+margin-bottom: 15px;
+font-size: 22px;
+height: 50px;
+}
+.icon {
+padding: 10px;
+color: #fdc501;
+
+min-width: 50px;
+text-align: center;
+}
+ 
+ .input-field {
+width: 100%;
+padding: 10px;
+outline: none;
+}
+.btn-input{
+width: 30%;
+margin-left: 35%;
+border-radius: 10px; 
+}
+
+.modal-overlay {
+position: fixed;
+top: 7%;
+z-index: 5;
+margin: 0 auto;
+width: 90%;
+height: auto;
+background-color: #ffff;
+border: 2px solid #fdc501;
+border-radius: 10px;
+margin-left: 5%
+
+}
+.list-group {
+margin: 0;
+}
+.list-group-item {
+font-size: 16px;
+padding: 5px 20px;
+}
+.modal-title {
+margin: 0 auto;
+font-size: 20px;
+}
+.fa-check-circle {
+    color: green;
+font-size: 60px;
+
+}
+.modal-header {
+display: flex;
+flex-direction: column;
+align-items: center;
+}
+.list-group {
+width: 60%;
+align-self: center;
+margin: 0 auto;
+}
+.modal-title {
+color: green;
+padding: 20px;
+text-align: center;
+}
+.form-control._error {
+box-shadow: 0 0 10px red;
+}
+@media (max-width: 796px) {
+.list-group {
+width: 100%;
+align-self: center;
+margin: 0 auto;
+}
+.modal-overlay {
+position: fixed;
+top: 3%;
+z-index: 5;
+margin: 0 auto;
+width: 90%;
+height: auto;
+background-color: #ffff;
+border: 2px solid #fdc501;
+border-radius: 10px;
+margin-left: 5%;
+}
+.list-group-item {
+font-size: 14px;
+padding: 5px 15px;
+}
+}
+@media (max-width: 440px) {
+.list-group {
+width: 100%;
+align-self: center;
+margin: 0 auto;
+}
+.modal-overlay {
+position: fixed;
+top: 0;
+z-index: 5;
+margin: 0 auto;
+width: 90%;
+height: auto;
+background-color: #ffff;
+border: 2px solid #fdc501;
+border-radius: 10px;
+margin-left: 5%;
+}
+.list-group-item {
+font-size: 12px;
+padding: 0 15px;
+}
+
+
 }

@@ -10,70 +10,836 @@
     <script  defer src="https://maps.googleapis.com/maps/api/js?libraries=places&language=en&key=AIzaSyDbWXCKja1i6JaV-CaDnQqSgM0oaki7UIY"  type="text/javascript"></script>
     </script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css"/>
+    
+    
+    <style type="text/css">
+    a {
+        text-decoration: none;
+    }
+    a:hover {
+        border-bottom: none;
+        text-decoration: none;
+    }
+
+    .main-section {
+        margin-top: 20px;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        
+    }
+    .modal-window {
+        position: relative;
+        z-index: 100;
+        
+    }
+
+    .input-container {
+  display: flex;
+  margin-bottom: 0px;
+  font-size: 22px;
+  height: 50px;
+}
+.icon {
+  padding: 9px;
+  min-width: 50px;
+  text-align: center;
+  color: #fff;
+  
+}
+     
+     .input-field {
+  width: 100%;
+  padding: 10px;
+  outline: none;
+}
+
+.btn-input{
+    width: 200px;
+    border-radius: 10px;
+    background-color:  rgb(102, 99, 99);
+    border:2px solid #fff;
+    margin-top: 20px;
+}
+.btn-input:hover {
+    background-color:  rgb(187, 179, 179);
+    border:2px solid #fff;
+}
+.modal-overlay {
+    position: fixed;
+    top:9%;
+    width: 100%;
+    z-index: 100;
+}
+.modal-window {
+    width: 70%;
+    z-index: 100;
+    margin: 0 auto;
+    height: auto;
+    background-color: #212529eb;
+    /* border: 2px solid #fdc501; */
+    border-radius: 10px;
+    max-width: 900px;
+}
+.list-group {
+    margin: 0;
+background-color: #212529eb;
+}
+.list-group-item {
+    font-size: 16px;
+    padding: 5px 20px;
+        background-color: #212529eb;
+    color: #fff;
+}
+.modal-title {
+    margin: 0 auto;
+    font-size: 20px;
+}
+.fa-check-circle {
+        color: green;
+    font-size: 60px;
+    
+}
+.modal-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.list-group {
+    width: 60%;
+    align-self: center;
+    margin: 0 auto;
+}
+.modal-title {
+    color: green;
+    padding: 20px;
+    text-align: center;
+}
+.form-control._error {
+    box-shadow: 0 0 10px red;
+}
+.form-group {
+    
+   position: relative;
+   
+   
+}
+.main-form {
+    width: 70%;
+    
+}
+.label {
+    color: #fff;
+    margin-left: 10%;
+    margin-top: 20px;
+    margin-bottom: 0px;
+    font-style: italic;
+    
+}
+
+
+
+.front{
+    transform: rotateY(180deg);
+    transition: 3s;
+}
+.back{
+    transform: rotateY(0deg);
+    transition: 3s;
+}
+
+.form-control, .form-control-select {
+    /* color: #fff;
+    background: transparent !important;
+    border: none !important;
+    border-bottom: 2px solid #fff !important; */
+    font-size: 16px;
+    font-weight: bold;
+    box-shadow: 5px 5px 20px rgba(255,255,255,0.8);
+
+}
+/* .select-item{
+    background: #000;
+} */
+/* .form-control::placeholder, .form-control-select::placeholder {
+    color: #fff;
+}
+.form-control:focus {
+   color: #fff;
+   
+} */
+
+#header-login {
+    background-color:  rgb(102, 99, 99);
+    border:2px solid #fff;
+    border-radius: 10px;
+}
+.header-call {
+    text-decoration: none;
+}
+.modal-buttons {
+   width: 150px;
+    border-radius: 10px;
+    background-color:  rgb(102, 99, 99);
+    border:2px solid #fff;
+    margin-top: 20px;
+}
+
+.modal-buttons:hover {
+    background-color:  rgb(187, 179, 179);
+    border:2px solid #fff;
+}
+::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+}
+
+
+@media (max-width: 1080px) {
+
+
+.main-form {
+    width: 85%;
+    
+}
+#header-login{
+    font-size: 18px;
+}
+#header-menu {
+    margin-top: 0px;
+    
+}
+    .modal-overlay {
+    position: fixed;
+    top:2%;
+    width: 100%;
+    z-index: 100;
+}
+.modal-title {
+    margin: 0 auto;
+    font-size: 15px;
+}
+.modal-window {
+    width: 90%;
+}
+.modal-buttons {
+   width: fit-content;
+    border-radius: 10px;
+    background-color:  rgb(102, 99, 99);
+    border:2px solid #fff;
+    margin-top: 20px;
+    font-size: 12px;
+}
+.modal-footer {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    /* flex-wrap: wrap; */
+    -ms-flex-align: center;
+    /* align-items: center; */
+    -ms-flex-pack: end;
+    justify-content: center;
+    padding: .75rem;
+    border-top: 1px solid #dee2e6;
+    border-bottom-right-radius: calc(.3rem - 1px);
+    border-bottom-left-radius: calc(.3rem - 1px);
+    /* align-items: center; */
+    /* text-align: center; */
+}
+}
+
+@media (max-width: 1023px) and (max-width: 767px) {
+
+}
+@media (min-width: 768px) {
+
+  
+}
+@media (max-width: 767px) {
+        .modal-overlay {
+    position: fixed;
+    top:2%;
+    width: 100%;
+    z-index: 100;
+}
+.modal-title {
+    margin: 0 auto;
+    font-size: 15px;
+}
+.modal-window {
+    width: 90%;
+}
+.modal-buttons {
+   width: fit-content;
+    border-radius: 10px;
+    background-color:  rgb(102, 99, 99);
+    border:2px solid #fff;
+    margin-top: 20px;
+    font-size: 14px;
+}
+.modal-footer {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    /* flex-wrap: wrap; */
+    -ms-flex-align: center;
+    /* align-items: center; */
+    -ms-flex-pack: end;
+    justify-content: center;
+    padding: .75rem;
+    border-top: 1px solid #dee2e6;
+    border-bottom-right-radius: calc(.3rem - 1px);
+    border-bottom-left-radius: calc(.3rem - 1px);
+    /* align-items: center; */
+    /* text-align: center; */
+}
+   .form-label {
+       display: none;
+   }
+    .list-group {
+    width: 100%;
+    align-self: center;
+    margin: 0 auto;
+    }
+.main-form {
+    width: 70%;
+    max-width: 800px;
+    
+}
+
+#header-menu {
+    margin-top: -50px;
+    z-index: 100;
+}
+.logo-main {
+    display: none;
+}
+.front {
+    margin-top: 100px;
+}
+.list-group-item {
+    font-size: 14px;
+    padding: 5px 15px;
+}
+
+.main-section {
+
+    margin-top: -90px;
+}
+}
+@media (max-width: 560px) {
+    .modal-overlay {
+    position: fixed;
+    top:2%;
+    width: 100%;
+    z-index: 100;
+}
+
+.label {
+    display: none;
+}
+.modal-title {
+    margin: 0 auto;
+    font-size: 15px;
+}
+.modal-window {
+    width: 90%;
+}
+.modal-buttons {
+   width: fit-content;
+    border-radius: 10px;
+    background-color:  rgb(102, 99, 99);
+    border:2px solid #fff;
+    margin-top: 20px;
+    font-size: 12px;
+}
+.modal-footer {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    /* flex-wrap: wrap; */
+    -ms-flex-align: center;
+    /* align-items: center; */
+    -ms-flex-pack: end;
+    justify-content: center;
+    padding: .75rem;
+    border-top: 1px solid #dee2e6;
+    border-bottom-right-radius: calc(.3rem - 1px);
+    border-bottom-left-radius: calc(.3rem - 1px);
+    /* align-items: center; */
+    /* text-align: center; */
+}
+   .form-label {
+       display: none;
+   }
+
+.main-form {
+    width: 90%;
+    
+}
+#header-logo{
+    position: absolute;
+    padding: 20% 3%;
+}
+
+
+}
+@media (max-width: 440px) {
+    .list-group {
+    width: 100%;
+    align-self: center;
+    margin: 0 auto;
+    }
+  #header-logo{
+    display: none;
+} 
+
+.list-group-item {
+    font-size: 12px;
+    padding: 0 15px;
+}
+
+#header-login {
+    margin-top: 30px;
+}
+}
+
+    </style>
 </head>
 <body>
-    <header>
-        <h1 class="title">Booking plugin for TAXI service</h1>
-        <h4 class="post-title">with DISTANCE and PRICE calculating functions</h4>
-    </header>
-    <section class="main-section">
-        <form class="main-form" id="distance_form">
-        <div class="form-group"><label>From:</label> 
-            <input class="form-control" id="from_places" placeholder="Enter a location" type="text"/> 
-            <input id="origin" name="origin" required="" type="hidden" />
-        </div>
-        
-        <div class="form-group"><label>To:</label> 
-            <input class="form-control" id="to_places" placeholder="Enter a location" type="text" /> 
-            <input id="destination" name="destination" required="" type="hidden" />
-        </div>     
-        <!-- <div class="form-group">
-            <label for="exampleFormControlInput1">Email address</label>
-            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
-        </div> -->
-        <!-- <div class="form-group">
-            <label for="exampleFormControlInput3">Date</label>
-            <input type="datetime-local" class="form-control" id="exampleFormControlInput3" placeholder="Date">
-        </div>    -->
-        <div class="form-group">
-            <label for="exampleFormControlSelect1">Example select</label>
-            <select class="form-control" id="exampleFormControlSelect4">
-            <option>Eco: 1.60 Euro/km</option>
-            <option>Business: 2.60 Euro/km</option>
-            <option>First Class: 3.60 Euro/km</option>
-            <option>Premium: 3.90 Euro/km</option>
-            <option>Exclusive: 6.00 Euro/km</option>
-            </select>
-        </div>
-        <input type="submit" class="btn btn-primary" value="Order Car"></input>
-        </form>
-        <div id="result" class="result-list">
-            <ul class="list-group">
-                <li class="list-group-item d-flex justify-content-between align-items-center">FROM:
-                    <span id="from" class="badge badge-primary badge-pill"></span>
-                </li>
-                <li class="list-group-item d-flex justify-content-between align-items-center">TO:
-                    <span id="to" class="badge badge-primary badge-pill"></span>
-                </li>
-                <li class="list-group-item d-flex justify-content-between align-items-center">Car:
-                    <span id="car" class="badge badge-primary badge-pill"></span>
-                </li>
-                <li class="list-group-item d-flex justify-content-between align-items-center">Distance:
-                    <span id="in_kilo" class="badge badge-primary badge-pill"></span>
-                </li>
-                <li class="list-group-item d-flex justify-content-between align-items-center">WayTime:
-                    <span id="duration_text" class="badge badge-primary badge-pill"></span>
-                </li>
-                <li class="list-group-item d-flex justify-content-between align-items-center">PRICE:
-                    <span id="price_EUR" class="badge badge-primary badge-pill"></span>
-                </li>
-                
+<header>
 
-            </ul>
-        </div>
+    </header>
+
+    
+    <section class="main-section">
+        <h1>Booking plugin for Taxi or Delivery</h1>
+        <form class="main-form" action="send.php" id="distance_form" method="post"  >
+            <div class="row">   
+                <div class="form-group col-md-6 col-sm-6 col-xs-12 input-container"> 
+                <i class="fas fa-map-marker-alt icon"></i>
+                    <input class="form-control _req" id="from_places" placeholder="From:" type="text" autocomplete="off"> 
+                    
+                    <input id="origin" name="origin" type="hidden" >
+                    
+                    
+                    <input type="hidden" id="in_in_kilo" name="in_in_kilo">
+                    <input type="hidden" id="in_duration_text" name="in_duration_text">
+                    <input type="hidden" id="in_duration_value" name="in_duration_value">
+                    <input type="hidden" id="in_from" name="in_from">
+                    <input type="hidden" id="in_to" name="in_to">
+                    <input type="hidden" id="in_price_EUR" name="in_price_EUR">
+                    <input type="hidden" id="in_car" name="in_car">
+                    <input type="hidden" id="in_boarding-time" name="in_boarding-time">
+                    <input type="hidden" id="in_boarding-time-hours" name="in_boarding-time-hours">
+                    <input type="hidden" id="in_order-time" name="in_order-time">
+                    
+                    
+                </div>
+        
+                <div class="form-group col-md-6 col-sm-6 col-xs-12 input-container">
+                    <i class="fas fa-map-marker-alt icon"></i>
+                    <input class="form-control _req" id="to_places" placeholder="To:" type="text" autocomplete="off"> 
+                    
+                  <input id="destination" name="destination" type="hidden" >
+                </div>   
+            </div>
+            <div class="row"> 
+                <div class="col-md-12 col-sm-12 col-xs-12 form-group  input-container">
+                    <i class="fas fa-taxi icon"></i>
+                    <select class="form-control" name="car_type" id="exampleFormControlSelect4">
+                    <option class="select-item">Car Type:</option>
+                    <option class="select-item">Economy: 1.00 Euro/km</option>
+                    <option class="select-item">Business: 2.00 Euro/km</option>
+                    <option class="select-item">FirstClass: 3.00 Euro/km</option>
+                    <option class="select-item">Premium: 4.00 Euro/km</option>
+                    <option class="select-item">Exclusive: 5.00 Euro/km</option>
+                    </select>
+                </div>
+            </div>
+            
+             <div class="row">   
+            
+                <div class="col-md-6 col-sm-6 col-xs-12"> 
+                    <p class="label">Boarding Date:</p>
+                </div>
+                <div class="col-md-6 col-sm-6 col-xs-12 "> 
+                    <p class="label">Boarding Time:</p>
+                </div>   
+            </div>
+            
+            <div class="row">   
+            
+                <div class="form-group col-md-6 col-sm-6 col-xs-12 input-container"> 
+                <i class="fas fa-clock icon"></i>
+                    <input class="form-control _req" id="boarding" name="in_date" placeholder="Date" type="date"> 
+                    
+                </div>
+                <div class="form-group col-md-6 col-sm-6 col-xs-12 input-container"> 
+                    <i class="fas fa-clock icon"></i>
+                    <input class="form-control _req" id="boarding-hours" placeholder="Boarding Time"  type="time" > 
+                    
+                    
+                </div>   
+            </div>
+            <div class="row">   
+                <div class="form-group col-md-6 col-sm-6 col-xs-12 input-container"> 
+                <i class="fas fa-phone icon"></i>
+                    <input class="form-control _req" name="phone" id="phone" placeholder="Phone:" type="tel"> 
+                
+                    
+                </div>
+        
+                <div class="form-group col-md-6 col-sm-6 col-xs-12 input-container">
+                    <i class="fas fa-envelope icon"></i>
+                    <input class="form-control _req _email" id="email" name="email" placeholder="E-Mail:" type="email" > 
+                    
+                </div>   
+            </div>
+        </form>
+        <button  class="btn-input" id="btn02">Order You Car</button>
     </section>
-    <script src="main.js"></script>
+
+    
+<script>
+    
+
+
+</script>
+    
+    <script>
+document.addEventListener('DOMContentLoaded', function () {
+    const form = document.getElementById('distance_form');
+    
+    const btn02 = document.getElementById('btn02');
+    
+    form.addEventListener('submit', formSend);
+
+    btn02.addEventListener('click', formSend);
+
+    async function formSend(e) {
+        // e.preventDefault();
+        
+        let error = formValidate(form);
+
+        if(error === 0 ) {
+        
+            
+        document.querySelector(".main-section").hidden=true;
+        const rotateForm = document.querySelector('.front');
+        rotateForm.classList.add('back')
+            
+          setTimeout(  function _createModal(options, e) {
+            
+                  const modal = document.createElement('div')
+                  modal.classList.add('vmodal')
+                  modal.insertAdjacentHTML(
+                    'afterbegin',
+                    `
+                   
+<div id="modal-overlay-btn" class="modal-overlay" >
+  <div class="modal-window" id="modal-window-send">
+    <div class="modal-header">
+    <div><i class="fas fa-check-circle"></i></div>
+      <span class="modal-title" id="title">Vielen Dank, dass Sie sich für unseren Chauffeurservice entschieden haben! Überprüfen Sie bitte Ihre Bestelldaten. Drücken Sie auf Akzeptieren, wenn alles richtig ist.</span>
+    </div>
+    <div class="modal-main">
+              <div id="result" class="result-list">
+    <div class="list-group">
+    
+    
+                    <div class="list-group-item d-flex justify-content-between ">Abholort:
+                        <span id="from" class="result-items"></span>
+                    </div>
+                    <div class="list-group-item d-flex justify-content-between ">Zielort:
+                        <span id="to" class="result-items"></span>
+                    </div>
+
+                    <div class="list-group-item d-flex justify-content-between ">Abholdatum:
+                        <span id="boarding-time" class="result-items"></span>
+                    </div>
+
+                    <div class="list-group-item d-flex justify-content-between ">Abholzeit:
+                        <span id="boarding-time-hours" class="result-items"></span>
+                    </div>
+
+                    <div class="list-group-item d-flex justify-content-between ">Fahrzeugtyp:
+                        <span id="car" class="result-items"></span>
+                    </div>
+
+                    <div class="list-group-item d-flex justify-content-between ">Preis:
+                        <span id="price_EUR" class="result-items"></span>
+                    </div>
+                    
+                    <div class="list-group-item d-flex justify-content-between ">Entfernung:
+                        <span id="in_kilo" class="result-items"></span>
+                    </div>
+                    
+                    <div class="list-group-item d-flex justify-content-between ">Durchschnittliche Fahrzeit:
+                        <span id="duration_text" name="order-date" class=" result-items "></span>
+                    </div>
+
+                    <div class="list-group-item d-flex justify-content-between ">Bestelldatum / -zeit:
+                        <span id="order-time" class="result-items"></span>
+                    </div>
+     
+        
+    </div>
+    </div>
+    </div>
+    <div class="modal-footer">
+      
+     
+      <button id="backButton" class="modal-buttons" onclick="modalButtons()">Zurück</button>
+      <button id="acceptButton" class="modal-buttons" type="submit" form="distance_form" >Akzeptieren</button>
+     
+      
+    </div>
+  </div>
+</div>
+                    
+                    `
+                  )
+                  document.body.appendChild(modal)
+                  return modal;
+                }, 2000);
+           
+                   
+    
+                // calculate distance
+          setTimeout(  function calculateDistance() {
+                var origin = $('#origin').val();
+                var destination = $('#destination').val();
+                var service = new google.maps.DistanceMatrixService();
+                service.getDistanceMatrix(
+                    {
+                        origins: [origin],
+                        destinations: [destination],
+                        travelMode: 'DRIVING',
+                        // unitSystem: google.maps.UnitSystem.IMPERIAL, // miles and feet.
+                        unitSystem: google.maps.UnitSystem.METRIC, // kilometers and meters.
+                        avoidHighways: false,
+                        avoidTolls: false
+                    }, callback);
+            }, 2000); 
+            // get distance results
+            function callback(response, status, car) {
+                if (status != google.maps.DistanceMatrixStatus.OK) {
+                    $('#result').html(err);
+                } else {
+                    var origin = response.originAddresses[0];
+                    var destination = response.destinationAddresses[0];
+                    if (response.rows[0].elements[0].status === "ZERO_RESULTS") {
+                        $('#result').html("Better get on a plane. There are no roads between "  + origin + " and " + destination);
+                    } else {
+                        
+                        var carName = document.getElementById('exampleFormControlSelect4').value;
+                        var car = document.getElementById('exampleFormControlSelect4');
+                        var carPrices = [0, 1.6, 2.6, 3.6, 3.9, 6];
+                        var carIndex = car.selectedIndex;
+        
+                        var carSelectedPrice = carPrices[carIndex];
+                        var distance = response.rows[0].elements[0].distance;
+                        var duration = response.rows[0].elements[0].duration;
+                        console.log(response.rows[0].elements[0].distance);
+                        var distance_in_kilo = distance.value / 1000; // the kilom
+                        // var distance_in_mile = distance.value / 1609.34; // the mile
+                        var duration_text = duration.text;
+                        var duration_value = duration.value;
+                        var price_EUR = distance_in_kilo * carSelectedPrice;
+                        var boardingTime = document.getElementById('boarding');
+                        
+                        var date = new Date($(boardingTime).val());
+                        var options = {
+                          year: 'numeric',
+                          month: 'numeric',
+                          day: 'numeric'
+                        };
+                        var dateStr = date.toLocaleString('de-DE', options);
+                        var boardingTimeHours = document.getElementById('boarding-hours').value;
+                        
+                        var today = new Date().toLocaleString('de-DE');
+                      
+                        // $('#in_mile').text(distance_in_mile.toFixed(1));
+                        $('#in_kilo').text(`${distance_in_kilo.toFixed(2)} km`);
+                        $('#duration_text').text(duration_text);
+                        $('#duration_value').text(duration_value);
+                        $('#from').text(origin);
+                        $('#to').text(destination);
+                        $('#price_EUR').text(`${price_EUR.toFixed(2)} EUR`);
+                        $('#car').text(carName);
+                        $('#boarding-time').text(dateStr);
+                        $('#boarding-time-hours').text(boardingTimeHours);
+                        $('#order-time').text(today);
+                        
+                        $('#in_in_kilo').val(`${distance_in_kilo.toFixed(2)} km`);
+                        $('#in_duration_text').val(duration_text);
+                        $('#in_duration_value').val(duration_value);
+                        $('#in_from').val(origin);
+                        $('#in_to').val(destination);
+                        $('#in_price_EUR').val(`${price_EUR.toFixed(2)} EUR`);
+                        $('#in_car').val(carName);
+                        $('#in_boarding-time').val(dateStr);
+                        $('#in_boarding-time-hours').val(boardingTimeHours);
+                        $('#in_order-time').val(today);
+                        
+                    }
+                }
+            }
+            
+            
+              
+        }
+        
+         else {
+        form.classList.remove('_sending');
+         }
+    } 
+
+    function formValidate(form) {
+        let error = 0;
+        let formReq = document.querySelectorAll('._req');
+
+        for (let index=0; index < formReq.length; index++) {
+            const input = formReq[index];
+            formRemoveError(input);
+
+            if(input.classList.contains('_email')) {
+                if(emailTest(input)) {
+                    formAddError(input);
+                    error++;
+                }
+            } else {
+                if (input.value === '') {
+                    formAddError(input);
+                    error++;
+                }
+            }
+        }
+        return error;
+    }
+    
+    function formAddError(input) {
+        input.parentElement.classList.add('_error');
+        input.classList.add('_error');
+    }
+    function formRemoveError(input) {
+        input.parentElement.classList.remove('_error');
+        input.classList.remove('_error');
+    }
+    function emailTest(input) {
+        return !/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,8})+$/.test(input.value);
+    }
+    
+});
+
+
+    </script>
+    
+        <script>
+    
+    $(desktop = function() {
+    // add input listeners
+    $('#hidden-boarding').val(boarding);
+    google.maps.event.addDomListener(window, 'load', function () {
+        var from_places = new google.maps.places.Autocomplete(document.getElementById('from_places'));
+        var to_places = new google.maps.places.Autocomplete(document.getElementById('to_places'));
+
+        google.maps.event.addListener(from_places, 'place_changed', function () {
+            var from_place = from_places.getPlace();
+            var from_address = from_place.formatted_address;
+            $('#origin').val(from_address);
+        });
+
+        google.maps.event.addListener(to_places, 'place_changed', function () {
+            var to_place = to_places.getPlace();
+            var to_address = to_place.formatted_address;
+            $('#destination').val(to_address);
+        });
+
+    });
+
+  
+});
+$(mobile = function() {
+    // add input listeners
+    google.maps.event.addDomListener(window, 'touchend', function () {
+        var from_places = new google.maps.places.Autocomplete(document.getElementById('from_places'));
+        var to_places = new google.maps.places.Autocomplete(document.getElementById('to_places'));
+
+        google.maps.event.addListener(from_places, 'place_changed', function () {
+            var from_place = from_places.getPlace();
+            var from_address = from_place.formatted_address;
+            $('#origin').val(from_address);
+        });
+
+        google.maps.event.addListener(to_places, 'place_changed', function () {
+            var to_place = to_places.getPlace();
+            var to_address = to_place.formatted_address;
+            $('#destination').val(to_address);
+        });
+
+    });
+
+    
+
+   
+});
+    
+    </script>
+    <script>
+    
+    function modalButtons() {
+        const backForm = document.querySelector(".main-section").hidden = false;
+        
+       const removeModal = document.getElementById("modal-overlay-btn");
+      removeModal.remove();
+      
+     const rotateFormBack = document.querySelector('.front');
+        rotateFormBack.classList.add('front');
+     
+        
+
+}
+       
+    </script>
+    <script>
+        
+    // // // $('form').submit(function(event) {
+    // // //   event.preventDefault();
+    // // //   $.ajax({
+    // // //     type: "POST",
+    // // //     url: "send.php",
+    // // //     data: $(this).serialize()
+    // // //   }).done(function() {
+    // // //     $(this).find("input").val("");
+    // // //     $('.modal').modal('hide');
+    // // //     $('#thk').modal('show');
+    // // //     $("form").trigger("reset");
+    // // //   });
+    // // //   return false;
+    // // // });
+    
+    // $('#acceptButton').click( function() {
+    // $.ajax({
+    //     url: 'send.php',
+    //     type: 'post',
+    //     dataType: 'json',
+    //     data: $('form').serialize(),
+    //     }).done(function() {
+    //         $(this).find("input").val("");
+    //         $('.modal').modal('hide');
+    //         $('#thk').modal('show');
+    //         $("form").trigger("reset");
+    //       });
+    //       return false;
+    // });
+
+    </script>
+
+
+
+
 </body>
 </html>
