@@ -16,8 +16,7 @@ document.addEventListener('DOMContentLoaded', function () {
         
             
         document.querySelector(".main-section").hidden=true;
-        const rotateForm = document.querySelector('.front');
-        rotateForm.classList.add('back')
+        
             
           setTimeout(  function _createModal(options, e) {
             
@@ -182,7 +181,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
         
          else {
-             console.log(dateStr)
+        form.classList.remove('_sending');
          }
     } 
 
