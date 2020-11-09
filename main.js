@@ -182,7 +182,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
         
          else {
-        form.classList.remove('_sending');
+             console.log(dateStr)
          }
     } 
 
