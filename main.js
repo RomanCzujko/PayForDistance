@@ -30,45 +30,45 @@ document.addEventListener('DOMContentLoaded', function () {
   <div class="modal-window" id="modal-window-send">
     <div class="modal-header">
     <div><i class="fas fa-check-circle"></i></div>
-      <span class="modal-title" id="title">Vielen Dank, dass Sie sich für unseren Chauffeurservice entschieden haben! Überprüfen Sie bitte Ihre Bestelldaten. Drücken Sie auf Akzeptieren, wenn alles richtig ist.</span>
+      <span class="modal-title" id="title">Vielen Check you booking details! Push and to Accept or Back to editing you booking.</span>
     </div>
     <div class="modal-main">
               <div id="result" class="result-list">
     <div class="list-group">
     
     
-                    <div class="list-group-item d-flex justify-content-between ">Abholort:
+                    <div class="list-group-item d-flex justify-content-between ">From:
                         <span id="from" class="result-items"></span>
                     </div>
-                    <div class="list-group-item d-flex justify-content-between ">Zielort:
+                    <div class="list-group-item d-flex justify-content-between ">To:
                         <span id="to" class="result-items"></span>
                     </div>
 
-                    <div class="list-group-item d-flex justify-content-between ">Abholdatum:
+                    <div class="list-group-item d-flex justify-content-between ">Date:
                         <span id="boarding-time" class="result-items"></span>
                     </div>
 
-                    <div class="list-group-item d-flex justify-content-between ">Abholzeit:
+                    <div class="list-group-item d-flex justify-content-between ">Time:
                         <span id="boarding-time-hours" class="result-items"></span>
                     </div>
 
-                    <div class="list-group-item d-flex justify-content-between ">Fahrzeugtyp:
+                    <div class="list-group-item d-flex justify-content-between ">Car Type:
                         <span id="car" class="result-items"></span>
                     </div>
 
-                    <div class="list-group-item d-flex justify-content-between ">Preis:
+                    <div class="list-group-item d-flex justify-content-between ">Price:
                         <span id="price_EUR" class="result-items"></span>
                     </div>
                     
-                    <div class="list-group-item d-flex justify-content-between ">Entfernung:
+                    <div class="list-group-item d-flex justify-content-between ">Distance:
                         <span id="in_kilo" class="result-items"></span>
                     </div>
                     
-                    <div class="list-group-item d-flex justify-content-between ">Durchschnittliche Fahrzeit:
+                    <div class="list-group-item d-flex justify-content-between ">Average Way Time:
                         <span id="duration_text" name="order-date" class=" result-items "></span>
                     </div>
 
-                    <div class="list-group-item d-flex justify-content-between ">Bestelldatum / -zeit:
+                    <div class="list-group-item d-flex justify-content-between ">Order date:
                         <span id="order-time" class="result-items"></span>
                     </div>
      
@@ -79,8 +79,8 @@ document.addEventListener('DOMContentLoaded', function () {
     <div class="modal-footer">
       
      
-      <button id="backButton" class="modal-buttons" onclick="modalButtons()">Zurück</button>
-      <button id="acceptButton" class="modal-buttons" type="submit" form="distance_form" >Akzeptieren</button>
+      <button id="backButton" class="modal-buttons" onclick="modalButtons()">Back</button>
+      <button id="acceptButton" class="modal-buttons" type="submit" form="distance_form" >Accept</button>
      
       
     </div>
