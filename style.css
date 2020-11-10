@@ -247,7 +247,7 @@ border-bottom-left-radius: calc(.3rem - 1px);
 @media (max-width: 767px) {
     h1 {
         font-size: 2.0rem;
-        margin-top: 80px;
+        margin-top: 20px;
         text-align: center;
     }
     .modal-overlay {
@@ -318,7 +318,6 @@ padding: 5px 15px;
 
 .main-section {
 
-margin-top: -90px;
 }
 }
 @media (max-width: 560px) {
@@ -330,7 +329,7 @@ z-index: 100;
 }
 h1 {
     font-size: 1.5rem;
-    margin-top: 106px;
+    margin-top: 20px;
     text-align: center;
 }
 
