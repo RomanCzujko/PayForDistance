@@ -124,7 +124,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         
                         var carName = document.getElementById('exampleFormControlSelect4').value;
                         var car = document.getElementById('exampleFormControlSelect4');
-                        var carPrices = [0, 1.6, 2.6, 3.6, 3.9, 6];
+                        var carPrices = [0, 1.0, 2.0, 3.0, 4.0, 5.0];
                         var carIndex = car.selectedIndex;
         
                         var carSelectedPrice = carPrices[carIndex];
