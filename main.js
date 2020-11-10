@@ -226,7 +226,7 @@ document.addEventListener('DOMContentLoaded', function () {
 $(desktop = function() {
     // add input listeners
     $('#hidden-boarding').val(boarding);
-    google.maps.event.addDomListener(window, 'oninput', function () {
+    google.maps.event.addDomListener(window, 'load', function () {
         var from_places = new google.maps.places.Autocomplete(document.getElementById('from_places'));
         var to_places = new google.maps.places.Autocomplete(document.getElementById('to_places'));
 
