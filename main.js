@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', function () {
   <div class="modal-window" id="modal-window-send">
     <div class="modal-header">
     <div><i class="fas fa-check-circle"></i></div>
-      <span class="modal-title" id="title">Please check your booking details! Push and to Accept or Back to editing you booking.</span>
+      <span class="modal-title" id="title">Please check your booking details! Push to Accept or Back to editing you booking.</span>
     </div>
     <div class="modal-main">
               <div id="result" class="result-list">
